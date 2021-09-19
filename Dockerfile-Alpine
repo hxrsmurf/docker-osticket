@@ -1,0 +1,11 @@
+# Might just use php7 fpm alpine...
+
+FROM httpd:alpine3.14
+RUN set -x \
+  && cd /tmp \
+  && wget https://github.com/osTicket/osTicket/releases/download/v1.15.3.1/osTicket-v1.15.3.1.zip \
+  && unzip osTicket-v1.15.3.1.zip \
+  && mv upload/* /usr/local/apache2/htdocs \
+  && cd /usr/local/apache2/htdocs \
+  && cp include/ost-sampleconfig.php include/ost-config.php \
+  && chmod 0666 include/ost-config.php
