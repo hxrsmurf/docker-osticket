@@ -1,4 +1,5 @@
 # Might just use php7 fpm alpine...
+# This doesn't work yet.
 
 FROM httpd:alpine3.14
 RUN set -x \

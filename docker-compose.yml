@@ -9,7 +9,7 @@ services:
       - MYSQL_USER=osticket
       - MYSQL_PASSWORD=osticket
     volumes:
-      - db:/var/lib/mysql
+      - ./db:/var/lib/mysql
   osticket:
     build: .
     ports:
@@ -17,7 +17,4 @@ services:
     depends_on:
       - db
     volumes:
-      - data:/var/www/html/
-volumes:
-  data:
-  db:
+      - ./data:/var/www/html
