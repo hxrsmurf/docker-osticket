@@ -8,6 +8,8 @@ services:
       - MYSQL_DATABASE=osticket
       - MYSQL_USER=osticket
       - MYSQL_PASSWORD=osticket
+    volumes:
+      - db:/var/lib/mysql
   osticket:
     build: .
     ports:
@@ -18,3 +20,4 @@ services:
       - data:/var/www/html/
 volumes:
   data:
+  db:
