@@ -18,3 +18,4 @@ services:
       - db
     volumes:
       - ./data:/var/www/html
+      - ./apache2:/etc/apache2
